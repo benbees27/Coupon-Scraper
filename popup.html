@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coupon Finder Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 350px;
+      padding: 15px;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      background: linear-gradient(135deg, #2196F3, #1976D2);
+      color: white;
+      border-radius: 8px;
+    }
+    .logo {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .subtitle {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    .coupon-list {
+      max-height: 350px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
+    .coupon-item {
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .coupon-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .coupon-code {
+      font-weight: 500;
+      color: #2196F3;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .copy-button {
+      padding: 4px 8px;
+      background: #e3f2fd;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #1976D2;
+    }
+    .coupon-description {
+      font-size: 13px;
+      color: #666;
+      margin: 5px 0;
+    }
+    .success-rate {
+      font-size: 12px;
+      color: #4CAF50;
+      display: flex;
+      align-items: center;
+    }
+    .success-rate::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4CAF50;
+      margin-right: 5px;
+    }
+    .verified-badge {
+      background: #4CAF50;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin-left: 8px;
+    }
+    .settings {
+      margin-top: 15px;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .toggle-switch input {
+      margin-right: 10px;
+    }
+    .status {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-top: 15px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+    .ad-space {
+      margin-top: 15px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .ad-label {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icons/icon48.png" alt="Logo" class="logo">
+    <div>
+      <div class="title">Coupon Finder Pro</div>
+      <div class="subtitle">Smart savings, verified deals</div>
+    </div>
+  </div>
+
+  <div id="couponList" class="coupon-list">
+    <!-- Coupons will be inserted here dynamically -->
+  </div>
+
+  <div class="settings">
+    <div class="toggle-switch">
+      <input type="checkbox" id="autoScan" checked>
+      <label for="autoScan">Auto-scan for coupons</label>
+    </div>
+    <div class="toggle-switch">
+      <input type="checkbox" id="notifications" checked>
+      <label for="notifications">Show notifications</label>
+    </div>
+  </div>
+
+  <div class="status" id="status">
+    Scanning for coupons...
+  </div>
+
+  <div class="ad-space">
+    <div class="ad-label">SPONSORED</div>
+    <div id="adContent">
+      <!-- Ad content will be inserted here -->
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
